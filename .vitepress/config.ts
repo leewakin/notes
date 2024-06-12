@@ -54,17 +54,17 @@ function nav(): DefaultTheme.NavItem[] {
         {
           text: 'Node.js',
           link: '/node/what-is-node/',
-          activeMatch: '/node/'
+          activeMatch: '^/node/'
         },
         {
           text: 'Vue.js',
           link: '/vue/what-is-vue/',
-          activeMatch: '/vue/'
+          activeMatch: '^/vue/'
         },
         {
           text: '数据库',
           link: '/database/what-is-database/',
-          activeMatch: '/database/'
+          activeMatch: '^/database/'
         }
       ]
     }
@@ -103,7 +103,16 @@ function sideBarDatabase(): DefaultTheme.SidebarItem[] {
       text: '数据库',
       items: [
         { text: '什么是 数据库 ?', link: 'what-is-database' },
-        { text: 'mysql', link: 'mysql' }
+        {
+          text: 'sql',
+          base: '/database/sql/',
+          items: [
+            {
+              text: '单表查询',
+              link: 'single-table-query'
+            }
+          ]
+        }
       ]
     }
   ]
